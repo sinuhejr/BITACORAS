@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<!-- Título de la página de impresión -->
+<h1 style="text-align: center; font-size: 8px; font-weight: bold;">REGISTRO DE SALIDA DE PERSONAL</h1>
+<h2 id="vehicleSubtitle" style="text-align: center; font-size: 7px; font-weight: bold;"></h2>  <!-- Aquí se añadirá el vehículo -->
+
+
+<!-- Aquí comienza el resto de la tabla -->
+<table>
+    <!-- Contenido de la tabla -->
+</table>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Tabla</title>
+    <style>
+        /* Aquí puedes agregar el estilo CSS que desees */
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .select-container {
+            width: 45%;
+        }
+
+        select {
+            width: 100%;
+            padding: 5px;
+            margin: 5px 0;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .vacation-container {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .move-buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .move-buttons button {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Dropdowns para seleccionar vehículo, mes y año -->
+        <div class="select-container">
+            <label for="vehicle">Seleccionar Vehículo:</label>
+            <select id="vehicle">
+                <option value="Explorer AG051A3">Explorer AG051A3</option>
+                <option value="Charger AG843A2">Charger AG843A2</option>
+                <option value="Charger AG845A2">Charger AG845A2</option>
+                <option value="Charger AG866A2">Charger AG866A2</option>
+                <option value="Charger AG898A2">Charger AG898A2</option>
+                <option value="Versa AG340A2">Versa AG340A2</option>
+                <option value="Hummer AG398A3">Hummer AG398A3</option>
+                <option value="Jeep AAA531A">Jeep AAA531A</option>
+                <option value="Tacoma BM002AA">Tacoma BM002AA</option>
+            </select>
+
+            <label for="month">Seleccionar Mes:</label>
+            <select id="month">
+                <option value="1">Enero</option>
+                <option value="2">Febrero</option>
+                <option value="3">Marzo</option>
+                <option value="4">Abril</option>
+                <option value="5">Mayo</option>
+                <option value="6">Junio</option>
+                <option value="7">Julio</option>
+                <option value="8">Agosto</option>
+                <option value="9">Septiembre</option>
+                <option value="10">Octubre</option>
+                <option value="11">Noviembre</option>
+                <option value="12">Diciembre</option>
+            </select>
+
+            <label for="year">Seleccionar Año:</label>
+            <select id="year">
+                <option value="2024">2024</option>
+                <option value="2025">2025</option>
+                <option value="2026">2026</option>
+                <option value="2027">2027</option>
+                <option value="2028">2028</option>
+                <option value="2029">2029</option>
+                <option value="2030">2030</option>
+            </select>
+        </div>
+
+        <!-- Contenedor de oficiales de vacaciones -->
+        <div class="vacation-container">
+            <label for="availableOfficers">Seleccionar Oficiales de Vacaciones:</label>
+            <select id="availableOfficers" multiple size="6">
+                <option value="Fredy Oropeza Cruz">Fredy Oropeza Cruz</option>
+                <option value="Rivero Bautista Ricardo">Rivero Bautista Ricardo</option>
+                <option value="Jiménez Rivera Sinuhé">Jiménez Rivera Sinuhé</option>
+                <option value="Vega Cardona Juan David">Vega Cardona Juan David</option>
+                <option value="García Alemán Celeste">García Alemán Celeste</option>
+                <option value="Sandoval Vázquez Alondra">Sandoval Vázquez Alondra</option>
+            </select>
+            <div class="move-buttons">
+                <button onclick="moveToVacation()">➔</button>
+                <button onclick="moveToAvailable()">➔</button>
+            </div>
+            <select id="vacationOfficers" multiple size="6">
+                <!-- Aquí se moverán los oficiales de vacaciones -->
+            </select>
+        </div>
+    </div>
+
+    <!-- Botón para generar la tabla -->
+    <div class="button-container">
+        <button onclick="generateTable()">Generar</button>
+    </div>
+
+    <!-- Tabla de resultados -->
+    <table id="vehicleTable" style="display:none; width: 100%; margin-top: 20px;">
+        <thead>
+            <tr>
+            
+                <th>Nombre Completo</th>
+                <th>Fecha</th>
+               <th>Hora<br>de<br>Salida</th> <!-- Dividido en tres filas -->
+        <th>Hora<br>de<br>Regreso</th> <!-- Dividido en tres filas -->
+                <th>Motivo<br>de Salida</th>
+                <th>Firma</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody">
+            <!-- Aquí se generarán las filas dinámicamente -->
+        </tbody>
+    </table>
+
+
+    <script src="script.js"></script>
+<!-- Botón para imprimir la tabla -->
+<button onclick="printTable()">Imprimir Reporte</button>
+
+</body>
+</html>

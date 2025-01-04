@@ -1,0 +1,54 @@
+/* Estilos generales para centrar los títulos */
+#vehicleTable th {
+    white-space: normal; /* Permite dividir texto en varias líneas */
+    text-align: center; /* Centra el texto del encabezado */
+    vertical-align: middle; /* Centra verticalmente el contenido */
+    padding: 6px; /* Reduce el padding */
+    font-size: 10px; /* Ajusta el tamaño de la fuente */
+    border: 2px solid #000; /* Líneas visibles */
+}
+
+/* Ajustar las celdas de la tabla */
+#vehicleTable td {
+    padding: 4px; /* Reduce el espacio interno de las celdas */
+    font-size: 10px; /* Ajusta el tamaño de la fuente */
+    word-wrap: break-word; /* Permite el ajuste del texto largo */
+    text-align: justify; /* Justifica el texto */
+    border: 2px solid #000; /* Líneas visibles */
+}
+
+/* Estilo específico para las columnas de Hora de Salida y Hora de Regreso */
+#vehicleTable th:nth-child(3),
+#vehicleTable th:nth-child(4),
+#vehicleTable td:nth-child(3),
+#vehicleTable td:nth-child(4) {
+    width: 50px; /* Reduce el ancho */
+    white-space: nowrap; /* Evita el desbordamiento */
+    text-align: center; /* Centra el texto */
+}
+
+/* Ajuste de la columna "Motivo de Salida" */
+#vehicleTable td:nth-child(5) {
+    max-width: 75%; /* Reduce el ancho al 75% del tamaño original */
+    white-space: normal; /* Permite dividir texto en varias líneas */
+    text-align: justify; /* Justifica el texto */
+    overflow: hidden; /* Evita que el texto desborde */
+}
+
+/* Ajuste del cuadro de firma (última columna) */
+#vehicleTable th:last-child,
+#vehicleTable td:last-child {
+    width: 15%; /* Incrementa el ancho al 15% del tamaño de la tabla */
+    text-align: center; /* Centra el contenido */
+}
+
+/* Ajustar el ancho general del contenedor de la tabla */
+.table-container {
+    overflow-x: auto; /* Permite scroll horizontal si es necesario */
+}
+
+/* Ajustar las líneas de la cuadrícula */
+#vehicleTable td,
+#vehicleTable th {
+    border: 2px solid #000; /* Hace las líneas más gruesas y visibles */
+}
